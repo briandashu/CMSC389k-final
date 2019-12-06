@@ -1,0 +1,17 @@
+<ul id="movList">
+{{#each listing}}
+<p style = "font-size:25px"> Post: {{this.title}}</p>
+<p> Monthly Rent: {{this.monthlyRent}}</p>
+<p>Landlord Info:</p>
+<p >{{this.poster.firstName}} {{this.poster.lastName}}</p>
+<p >Phone Number: {{this.poster.phoneNumber}}</p>
+<p> Address</p>
+<p>{{this.address.streetName}}</p>
+<p>{{this.address.city}}</p>
+<p>{{this.address.state}}</p>
+<p>{{this.address.zip}}</p>
+<a href="/{{this._id}}/getReview">Reviews</a>
+<a href="/listing/{{this._id}}/review">Write a Review</a>
+{{/each}}
+</ul>
+
