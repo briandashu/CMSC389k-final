@@ -14,6 +14,9 @@ app.use('/public', express.static('public'));
 app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
 app.set('view engine', 'handlebars');
 
+const PORT = process.env.PORT ||
+5000;
+
 const http = require('http');
 const server = 
 http.createServer((req, res) => {
