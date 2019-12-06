@@ -14,16 +14,7 @@ app.use('/public', express.static('public'));
 app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
 app.set('view engine', 'handlebars');
 
-const PORT = process.env.PORT ||
-5000;
 
-const http = require('http');
-const server = 
-http.createServer((req, res) => {
-    res.statusCode = 200;
-    res.setHeader('Content-Type', 'text/plain');
-    res.end();
-});
 
 // app.use(bodyParser.urlencoded({ extended: false }));
 // app.engine('handlebars', exphbs({defaultLayout: 'main'}));
@@ -158,11 +149,7 @@ app.delete('/listing/deleteExpensive', function(req, res){
     });
 });
 
-/*
-app.listen(3000, function() {
-    console.log('App listening on port 3000!');
+
+app.listen(process.env.PORT || 3000, function() {
+    console.log('Listening!');
 })
-*/
-server.listen(PORT, () => {
-    console.log('Server running on ${PORT}/');
-});
